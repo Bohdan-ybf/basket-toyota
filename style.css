@@ -396,3 +396,174 @@ body {
     }
 
 }
+
+/*---------Технічні характеристики акордіон в моб версії--------------*/
+
+.section__technical__characteristics__accordion {
+    margin-bottom: 100px;
+}
+
+.technical__characteristics__accordion__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.tech__char__accor__block {
+    position: relative;
+    margin-bottom: 1px;
+    color: #fff;
+    overflow: hidden;
+}
+
+.tech__char__accor__block-input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.char__accor__content__wrapper {
+    max-height: 100vh;
+    overflow: hidden;
+    -webkit-transition: max-height .35s;
+    -o-transition: max-height .35s;
+    transition: max-height .35s;
+}
+
+
+
+/* :checked */
+.tech__char__accor__block-input:checked ~ .char__accor__content__wrapper {
+    max-height: 100vh;
+}
+
+.tech__char__accor__block-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    background-color: #ffffff;
+    cursor: default;
+    /* border-bottom: 1px solid #C5C6C6; */
+
+}
+
+.tech__char__accor__block-label::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 60%;
+    height: 1px;
+    background-color: #C5C6C6;
+
+}
+
+.tech__char__accor__block-label > span {
+    color: #282830;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.tech__char__accor__block-label::after {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(-50%, -50%);
+    -webkit-transition: all .35s;
+    -o-transition: all .35s;
+    transition: all .35s;
+    display: none;
+}
+
+.tech__char__accor__block-input[type=checkbox] + label::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAyMCAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xOS4xMDA0IDIuODc1MThMMTAuNzAwNCAxMS4zMDAyQzEwLjYwMDQgMTEuNDAwMiAxMC40OTIxIDExLjQ3MTIgMTAuMzc1NCAxMS41MTMyQzEwLjI1ODcgMTEuNTU1MiAxMC4xMzM3IDExLjU3NTggMTAuMDAwNCAxMS41NzUyQzkuODY3MDYgMTEuNTc1MiA5Ljc0MjA2IDExLjU1NDUgOS42MjUzOSAxMS41MTMyQzkuNTA4NzIgMTEuNDcxOCA5LjQwMDM5IDExLjQwMDggOS4zMDAzOSAxMS4zMDAyTDAuODc1MzkgMi44NzUxOEMwLjY0MjA1NyAyLjY0MTg1IDAuNTI1MzkgMi4zNTAxOCAwLjUyNTM5IDIuMDAwMThDMC41MjUzOSAxLjY1MDE4IDAuNjUwMzkgMS4zNTAxOCAwLjkwMDM5IDEuMTAwMThDMS4xNTAzOSAwLjg1MDE4MSAxLjQ0MjA2IDAuNzI1MTgxIDEuNzc1MzkgMC43MjUxODFDMi4xMDg3MiAwLjcyNTE4MSAyLjQwMDM5IDAuODUwMTgxIDIuNjUwMzkgMS4xMDAxOEwxMC4wMDA0IDguNDUwMThMMTcuMzUwNCAxLjEwMDE4QzE3LjU4MzcgMC44NjY4NDYgMTcuODcxNCAwLjc1MDE3OSAxOC4yMTM0IDAuNzUwMTc5QzE4LjU1NTQgMC43NTAxNzkgMTguODUxMSAwLjg3NTE3OSAxOS4xMDA0IDEuMTI1MThDMTkuMzUwNCAxLjM3NTE4IDE5LjQ3NTQgMS42NjY4NSAxOS40NzU0IDIuMDAwMThDMTkuNDc1NCAyLjMzMzUxIDE5LjM1MDQgMi42MjUxOCAxOS4xMDA0IDIuODc1MThaIiBmaWxsPSIjRkZCQTAwIi8+DQo8L3N2Zz4NCg==);
+}
+
+.tech__char__accor__block-input[type=checkbox]:checked + label::after {
+    width: 15px;
+    height: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNyAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xNS41IDFMMS41IDE1TTEuNSAxTDE1LjUgMTUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4NCjwvc3ZnPg0K);
+    top: 50%;
+    right: 10px;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 991px) {
+
+    .technical__characteristics__accordion__wrapper {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 10px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .char__accor__content__wrapper {
+        max-height: 0;
+    }
+
+    .tech__char__accor__block-input:checked ~ .char__accor__content__wrapper {
+        max-height: 100vh;
+    }
+
+    .tech__char__accor__block-label::after {
+        display: block;
+    }
+
+    .technical__characteristics__accordion__wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .tech__char__accor__block-label > span {
+        font-size: 16px;
+    }
+
+    .section__technical__characteristics__accordion {
+        margin-bottom: 30px;
+    }
+}
+
+/*----END-----Технічні характеристики акордіон в моб версії--------------*/
+
+
+/* BASKET 2 */
+
+.char__accor__content__box {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* column-gap: 10px; */
+    /* row-gap: 10px; */
+    gap: 20px;
+    margin: 30px 0 10px;
+}
+.char__accor__contact__box {
+}
+.accor__contact__title {
+    color:  #C5C6C6;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+margin-bottom: 10px;
+}
+.accor__contact__input {
+    color: #000;
+font-size: 14px;
+line-height: 10px; 
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+
+}
+/* END BASKET 2 */
